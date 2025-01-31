@@ -28,3 +28,4 @@ IDE/VC/*.out?
 /out/
 /.vs/
 .sarif/
+/.pak/

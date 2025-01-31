@@ -45,17 +45,20 @@ if(WIN32)
 
 	if(NOT DUNE_STATIC_VCPKG_TRIPLET_POSITION EQUAL -1)
 		set(DUNE_LIBRARY_POSTFIX "-static")
+		set(DUNE_LIBRARY_POSTFIX_MIXER "-static")
 	endif()
 else()
 	set(DUNE_LIBRARY_POSTFIX "-static")
+	set(DUNE_LIBRARY_POSTFIX_MIXER "-static")
 endif()
 
 if(APPLE)
     add_subdirectory(macOS)
+	set(DUNE_LIBRARY_POSTFIX_MIXER "")
 endif()
 
 set(LIBS
-	SDL2_mixer::SDL2_mixer${DUNE_LIBRARY_POSTFIX}
+	SDL2_mixer::SDL2_mixer${DUNE_LIBRARY_POSTFIX_MIXER}
 	SDL2_ttf::SDL2_ttf${DUNE_LIBRARY_POSTFIX}
 	SDL2::SDL2
 	fmt::fmt

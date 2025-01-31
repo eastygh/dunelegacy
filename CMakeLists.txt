@@ -14,6 +14,12 @@ project(dunelegacy
 )
 if(APPLE)
     enable_language(OBJC)
+    include_directories(
+            /opt/homebrew/include
+    )
+    link_directories(
+            /opt/homebrew/lib/
+    )
 endif()
 
 set(CMAKE_CXX_STANDARD 20)
